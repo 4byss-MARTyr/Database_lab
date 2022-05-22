@@ -7,14 +7,14 @@ DROP DATABASE IF EXISTS library_database;
 /*Створення таблиці на основі універсального відношення.*/
 CREATE TABLE IF NOT EXISTS library_database_table(
 	number INT NOT NULL,
-    code INT NOT NULL PRIMARY KEY,
-    novelty ENUM('Yes', 'No'),
+    cod INT NOT NULL PRIMARY KEY,
+    new ENUM('Yes', 'No'),
     name VARCHAR(100) NOT NULL,
-    prise FLOAT(5,2) DEFAULT '0',
+    price FLOAT(5,2) DEFAULT '0',
     publisher VARCHAR(30) NOT NULL,
     pages INT NOT NULL,
     format VARCHAR(30) DEFAULT 'Невідомо',
-    date DATE DEFAULT NULL,
+    datee DATE DEFAULT NULL,
     circulation INT CHECK (circulation<=5000) NOT NULL,
     topic VARCHAR(100) NOT NULL,
     category VARCHAR(30) NOT NULL
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS library_database_table(
 CREATE INDEX number ON library_database_table(number);
 
 /*Завантаження даних в таблицю*/
-INSERT INTO `library_database_table`(`number`, `code`, `novelty`, `name`, `prise`, `publisher`, `pages`, `format`, `date`, `circulation`, `topic`, `category`) VALUES
+INSERT INTO `library_database_table`(`number`, `cod`, `new`, `name`, `price`, `publisher`, `pages`, `format`, `datee`, `circulation`, `topic`, `category`) VALUES
 	(2, 5110, 'No', 'Апаратні засоби мультимедіа. Відеосистема РС', 15.51, 'Видавнича група BHV', 400, '70x100/16', '2000-07-24', 5000, 'Використання ПК в цілому', 'Підручники'),
     (8, 4985, 'No', 'Засвой самостійно модернізацію та ремонт ПК за 24 години, 2-ге вид', 18.90, 'Вільямс', 288, '70x100/16', '2000-07-07', 5000, 'Використання ПК в цілому', 'Підручники'),
     (9, 5141, 'No', 'Структури даних та алгоритми', 37.80, 'Вільямс', 384, '70x100/16', '2000-09-29', 5000, 'Використання ПК в цілому', 'Підручники'),
