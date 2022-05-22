@@ -24,29 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `library_database_table`
+-- Структура таблицы `book`
 --
 
-CREATE TABLE `library_database_table` (
+CREATE TABLE `book` (
   `number` int NOT NULL,
-  `code` int NOT NULL,
-  `novelty` enum('Yes','No') DEFAULT NULL,
+  `cod` int NOT NULL,
+  `new` enum('Yes','No') DEFAULT NULL,
   `name` varchar(100) NOT NULL,
-  `prise` float(5,2) DEFAULT '0.00',
+  `price` float(5,2) DEFAULT '0.00',
   `publisher` varchar(30) NOT NULL,
   `pages` int NOT NULL,
   `format` varchar(30) DEFAULT 'Невідомо',
-  `date` date DEFAULT NULL,
+  `datee` date DEFAULT NULL,
   `circulation` int NOT NULL,
   `topic` varchar(100) NOT NULL,
   `category` varchar(30) NOT NULL
 ) ;
 
 --
--- Дамп данных таблицы `library_database_table`
+-- Дамп данных таблицы `book`
 --
 
-INSERT INTO `library_database_table` (`number`, `code`, `novelty`, `name`, `prise`, `publisher`, `pages`, `format`, `date`, `circulation`, `topic`, `category`) VALUES
+INSERT INTO `book` (`number`, `cod`, `new`, `name`, `price`, `publisher`, `pages`, `format`, `datee`, `circulation`, `topic`, `category`) VALUES
 (203, 44, 'No', 'Відповіді на актуальні запитання щодо OS/2 Warp', 5.00, 'DiaSoft', 352, '60x84/16', '1996-03-20', 5000, 'Операційні системи', 'Інші операційні системи'),
 (222, 235, 'No', 'Інформаційні системи і структури даних', 0.00, 'Києво-Могилянська академія', 288, '60x90/16', NULL, 400, 'Використання ПК в цілому', 'Інші книги'),
 (191, 860, 'No', 'Операційна система UNIX', 3.50, 'Видавнича група BHV', 395, '84x100/16', '1997-05-05', 5000, 'Операційні системи', 'UNIX'),
@@ -76,10 +76,10 @@ INSERT INTO `library_database_table` (`number`, `code`, `novelty`, `name`, `pris
 --
 
 --
--- Индексы таблицы `library_database_table`
+-- Индексы таблицы `book`
 --
-ALTER TABLE `library_database_table`
-  ADD PRIMARY KEY (`code`),
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`cod`),
   ADD KEY `number` (`number`);
 COMMIT;
 
